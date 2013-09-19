@@ -1,0 +1,2 @@
+L1_TIMESTAMP %{MONTHDAY}/%{MONTH}/%{YEAR}:%{TIME} --%{INT}
+VL1_TIMESTAMP \[%{L1_TIMESTAMP:modsec_timestamp}\]
