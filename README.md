@@ -11,7 +11,7 @@ see: http://logstash.net/
 
 see: https://github.com/SpiderLabs/ModSecurity/wiki/ModSecurity-2-Data-Formats
 
-see: https://bitsofinfo.wordpress.com
+see: http://bitsofinfo.wordpress.com/2013/09/19/logstash-for-modsecurity-audit-logs/
 
 license: http://www.apache.org/licenses/LICENSE-2.0 
 
