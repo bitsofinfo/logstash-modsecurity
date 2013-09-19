@@ -5,7 +5,8 @@ logstash-modsecurity
  Example Modsecurity audit log ingestor
  configuration for Logstash
 
- @author bitsofinfo.g[at]gmail.com
+ author bitsofinfo.g[at]gmail.com
+ 
  built/tested w logstash v1.2.1 
 
  @see http://logstash.net/
