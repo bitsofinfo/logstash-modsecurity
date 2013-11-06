@@ -5,7 +5,7 @@ Example Modsecurity audit log ingestor configuration for Logstash
 
 author bitsofinfo.g[at]gmail.com
  
-built/tested w logstash v1.2.1 
+built/tested w logstash v1.2.1 and v1.2.2
 
 see: http://logstash.net/
 
