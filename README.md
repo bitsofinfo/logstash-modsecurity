@@ -4,8 +4,8 @@ logstash-modsecurity
 Example Modsecurity audit log ingestor configuration for Logstash
 
 author bitsofinfo.g[at]gmail.com
- 
-built/tested w logstash v1.2.1 and v1.2.2
+
+built/tested w logstash v1.3.0
 
 see: http://logstash.net/
 
@@ -13,7 +13,7 @@ see: https://github.com/SpiderLabs/ModSecurity/wiki/ModSecurity-2-Data-Formats
 
 see: http://bitsofinfo.wordpress.com/2013/09/19/logstash-for-modsecurity-audit-logs/
 
-license: http://www.apache.org/licenses/LICENSE-2.0 
+license: http://www.apache.org/licenses/LICENSE-2.0
 
 NOTE: this is not perfect and I am no Ruby expert however this worked when processing quite a bit of high volume mod-sec logs with lots of different variations in what A-K sections were and were not present. At a minimum its a good starting point to start tackling a complex log format.
 
