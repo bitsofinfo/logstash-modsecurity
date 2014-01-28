@@ -21,5 +21,7 @@ You should not need to, however IF you go ahead and EDIT the custom ruby filter 
 
 This config file for whatever reason will not run if you try to add the "-- web" option onto the logstash flat jar. This has been reported to the developers. Recommend you run this without the "-- web" option and just hook up Kibana separately.
 
+Also recommend you start logstash like "java -jar logstash-x.x.x-flatjar.jar agent -v -f /yourConf.conf"  The "-v" will give verbose output and help you debug issues. Also DON'T run in "-v" mode in a prod environment as you will end up outputting a ton of data to your console and/or logstash stdout capture file. (if you have one)
+
 
 
