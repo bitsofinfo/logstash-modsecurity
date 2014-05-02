@@ -5,7 +5,7 @@ Example Modsecurity audit log ingestor configuration for Logstash
 
 author bitsofinfo.g[at]gmail.com
 
-built/tested w logstash v1.3.3 (does NOT work with Logstash 1.4, in process...)
+built/tested w logstash v1.3.3 (does NOT work with Logstash 1.4, in process... waiting till 1.4.1 see: https://groups.google.com/d/msg/logstash-users/ACdShuxOFZY/ygMSk1M72-kJ)
 
 see: http://logstash.net/
 
