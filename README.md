@@ -17,6 +17,8 @@ license: http://www.apache.org/licenses/LICENSE-2.0
 
 NOTE: this is not perfect and I am no Ruby expert however this worked when processing quite a bit of high volume mod-sec logs with lots of different variations in what A-K sections were and were not present. At a minimum its a good starting point to start tackling a complex log format.
 
+Also note that ModSecurity Audit logs can definately contains some very sensitive data (like user passwords etc). So you might want to also take a look at using Logstash's Cipher filter to secure certain message fields in transit if you are sending these processed logs somewhere else: [http://bitsofinfo.wordpress.com/2014/06/25/encrypting-logstash-data/](http://bitsofinfo.wordpress.com/2014/06/25/encrypting-logstash-data/)
+
 You should not need to, however IF you go ahead and EDIT the custom ruby filter blocks, please be aware of https://logstash.jira.com/browse/LOGSTASH-1375 as if you introduce any error into the custom ruby blocks, one single error for one event, will take down the whole pipeline.
 
 This config file for whatever reason will not run if you try to add the "-- web" option onto the logstash flat jar. This has been reported to the developers. Recommend you run this without the "-- web" option and just hook up Kibana separately.
