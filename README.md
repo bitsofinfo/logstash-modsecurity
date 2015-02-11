@@ -1,11 +1,13 @@
 logstash-modsecurity
 ====================
 
-Example Modsecurity audit log ingestor configuration for Logstash
+Modsecurity audit log ingestor configuration for Logstash
 
-author bitsofinfo.g[at]gmail.com
+**author**: bitsofinfo.g[at]gmail.com
 
-built/tested w logstash v.1.3.3 and v1.4.1+ (does NOT work with Logstash 1.4.0)
+### Overview 
+
+Tested and running in production environments w/ logstash v.1.3.3 and v1.4.1+ (does NOT work with Logstash 1.4.0)
 
 see: http://logstash.net/
 
@@ -15,7 +17,9 @@ see: http://bitsofinfo.wordpress.com/2013/09/19/logstash-for-modsecurity-audit-l
 
 license: http://www.apache.org/licenses/LICENSE-2.0
 
-NOTE: this is not perfect and I am no Ruby expert however this worked when processing quite a bit of high volume mod-sec logs with lots of different variations in what A-K sections were and were not present. At a minimum its a good starting point to start tackling a complex log format.
+### Overview
+
+This example configuration file has been used as the basis to process many ModeSecurity audit logs with lots of different variance in regards to which A-K sections are present. At a minimum this is a good starting point to start tackling a complex log format and you can customize it to you needs.
 
 Also note that ModSecurity Audit logs can definately contains some very sensitive data (like user passwords etc). So you might want to also take a look at using Logstash's Cipher filter to secure certain message fields in transit if you are sending these processed logs somewhere else: [http://bitsofinfo.wordpress.com/2014/06/25/encrypting-logstash-data/](http://bitsofinfo.wordpress.com/2014/06/25/encrypting-logstash-data/)
 
