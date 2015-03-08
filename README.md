@@ -39,13 +39,13 @@ If logstash has been installed from the logstash repository (http://www.logstash
   3. Copy logstash_modsecurity_patterns to /opt/logstash/patterns/
   4. Give read access to the logstash user on /var/log/httpd/modsec_audit.log
 
-     setfacl -m u:logstash:r /var/log/httpd/modsec_audit.log
+     `setfacl -m u:logstash:r /var/log/httpd/modsec_audit.log
 
   5. Restart the logstash agent
 
-     systemctl restart logstash
+     `systemctl restart logstash
 
   6. Confirm mod_security messages are logged to standard output
 
-     tail -f /var/log/logstash/logstash.stdout
+     `tail -f /var/log/logstash/logstash.stdout
 
