@@ -29,5 +29,23 @@ This config file for whatever reason will not run if you try to add the "-- web"
 
 Also recommend you start logstash like "java -jar logstash-x.x.x-flatjar.jar agent -v -f /yourConf.conf"  The "-v" will give verbose output and help you debug issues. Also DON'T run in "-v" mode in a prod environment as you will end up outputting a ton of data to your console and/or logstash stdout capture file. (if you have one)
 
+Further note for Centos/Red Hat/Fedora Systems
+----------------------------------------------
 
+If logstash has been installed from the logstash repository (http://www.logstash.net/docs/1.4.2/repositories), follow these steps:
+
+  1. Set the path in logstash-modsecurity.conf to path => "/var/log/httpd/modsec_audit.log"
+  2. Copy logstash-modsecurity.conf to /etc/logstash/conf.d
+  3. Copy logstash_modsecurity_patterns to /opt/logstash/patterns/
+  4. Give read access to the logstash user on /var/log/httpd/modsec_audit.log
+
+     setfacl -m u:logstash:r /var/log/httpd/modsec_audit.log
+
+  5. Restart the logstash agent
+
+     systemctl restart logstash
+
+  6. Confirm mod_security messages are logged to standard output
+
+     tail -f /var/log/logstash/logstash.stdout
 
