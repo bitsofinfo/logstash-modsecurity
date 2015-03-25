@@ -49,3 +49,113 @@ If logstash has been installed from the logstash repository (http://www.logstash
 
 `tail -f /var/log/logstash/logstash.stdout`
 
+
+### Sample output event
+```
+{
+  "@timestamp": "2013-09-17T09:46:16.088Z",
+  "@version": "1",
+  "host": "razzle2",
+  "path": "/Users/bof/who2/zip4n/logstash/modseclogs/proxy9/modsec_audit.log.1",
+  "tags": [
+    "multiline"
+  ],
+  "rawSectionA": "[17/Sep/2013:05:46:16 --0400] MSZkdwoB9ogAAHlNTXUAAAAD 192.168.0.9 65183 192.168.0.136 80",
+  "rawSectionB": "POST /xml/rpc/soapservice-v2 HTTP/1.1\nContent-Type: application/xml\nspecialcookie: tb034=\nCache-Control: no-cache\nPragma: no-cache\nUser-Agent: Java/1.5.0_15\nHost: xmlserver.intstage442.org\nAccept: text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2\nConnection: keep-alive\nContent-Length: 93\nIncoming-Protocol: HTTPS\nab0044: 0\nX-Forwarded-For: 192.168.1.232",
+  "rawSectionC": {
+    "id": 2,
+    "method": "report",
+    "stuff": [
+      "kborg2@special292.org",
+      "X22322mkf3"
+    ],
+    "xmlrpm": "0.1a"
+  },
+  "rawSectionF": "HTTP/1.1 200 OK\nX-SESSTID: 009nUn4493\nContent-Type: application/xml;charset=UTF-8\nContent-Length: 76\nConnection: close",
+  "rawSectionH": "Message: Warning. Match of \"rx (?:^(?:application\\\\/x-www-form-urlencoded(?:;(?:\\\\s?charset\\\\s?=\\\\s?[\\\\w\\\\d\\\\-]{1,18})?)??$|multipart/form-data;)|text/xml)\" against \"REQUEST_HEADERS:Content-Type\" required. [file \"/opt/niner/modsec2/pp7.conf\"] [line \"69\"] [id \"960010\"] [msg \"Request content type is not allowed by policy\"] [severity \"WARNING\"] [tag \"POLICY/ENCODING_NOT_ALLOWED\"]\nApache-Handler: party-server-time2\nStopwatch: 1379411176088695 48158 (1771* 3714 -)\nProducer: ModSecurity for Apache/2.7 (http://www.modsecurity.org/); core ruleset/1.9.2.\nServer: Whoisthat/v1 (Osprey)",
+  "modsec_timestamp": "17/Sep/2013:05:46:16 --0400",
+  "uniqueId": "MSZkdwoB9ogAAHlNTXUAAAAD",
+  "sourceIp": "192.168.0.9",
+  "sourcePort": "65183",
+  "destIp": "192.168.0.136",
+  "destPort": "80",
+  "httpMethod": "POST",
+  "requestedUri": "/xml/rpc/soapservice-v2",
+  "incomingProtocol": "HTTP/1.1",
+  "requestBody": {
+    "id": 2,
+    "method": "report",
+    "stuff": [
+      "kborg2@special292.org",
+      "X22322mkf3"
+    ],
+    "xmlrpm": "0.1a"
+  },
+  "serverProtocol": "HTTP/1.1",
+  "responseStatus": "200 OK",
+  "requestHeaders": {
+    "Content-Type": "application/xml",
+    "specialcookie": "8jj220021kl==j2899IuU",
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
+    "User-Agent": "Java/1.5.1_15",
+    "Host": "xmlserver.intstage442.org",
+    "Accept": "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2",
+    "Connection": "keep-alive",
+    "Content-Length": "93",
+    "Incoming-Protocol": "HTTPS",
+    "ab0044": "0",
+    "X-Forwarded-For": "192.168.1.232"
+  },
+  "responseHeaders": {
+    "X-SESSTID": "009nUn4493",
+    "Content-Type": "application/xml;charset=UTF-8",
+    "Content-Length": "76",
+    "Connection": "close"
+  },
+  "auditLogTrailer": {
+    "Apache-Handler": "party-server-time2",
+    "Stopwatch": "1379411176088695 48158 (1771* 3714 -)",
+    "Producer": "ModSecurity for Apache/2.7 (http://www.modsecurity.org/); core ruleset/1.9.2.",
+    "Server": "Whoisthat/v1 (Osprey)",
+    "messages": [
+      {
+        "info": "Warning. Match of \"rx (?:^(?:application\\\\/x-www-form-urlencoded(?:;(?:\\\\s?charset\\\\s?=\\\\s?[\\\\w\\\\d\\\\-]{1,18})?)??$|multipart/form-data;)|text/xml)\" against \"REQUEST_HEADERS:Content-Type\" required.",
+        "file": "/opt/niner/modsec2/pp7.conf",
+        "line": "69",
+        "id": "960010",
+        "msg": "Request content type is not allowed by policy",
+        "severity": "WARNING",
+        "tag": "POLICY/ENCODING_NOT_ALLOWED"
+      }
+    ]
+  },
+  "event_date_microseconds": 1.37941116E15,
+  "event_date_milliseconds": 1.37941117E12,
+  "event_date_seconds": 1.3794112E9,
+  "event_timestamp": "2013-09-17T09:46:16.088Z",
+  "XForwardedFor-GEOIP": {
+    "ip": "192.168.1.122",
+    "country_code2": "XZ",
+    "country_code3": "BRZ",
+    "country_name": "Brazil",
+    "continent_code": "SA",
+    "region_name": "12",
+    "city_name": "Vesper",
+    "postal_code": "",
+    "timezone": "Brazil/Continental",
+    "real_region_name": "Region Metropolitana"
+  },
+  "matchedRules": [
+    "SecRule \"REQUEST_METHOD\" \"@rx ^POST$\" \"phase:2,status:400,t:lowercase,t:replaceNulls,t:compressWhitespace,chain,t:none,deny,log,auditlog,msg:'POST request must have a Content-Length header',id:960022,tag:PROTOCOL_VIOLATION/EVASION,severity:4\"",
+    "SecRule \"REQUEST_FILENAME|ARGS|ARGS_NAMES|REQUEST_HEADERS|XML:/*|!REQUEST_HEADERS:Referer\" \"@pm jscript onsubmit onchange onkeyup activexobject vbscript: <![cdata[ http: settimeout onabort shell: .innerhtml onmousedown onkeypress asfunction: onclick .fromcharcode background-image: .cookie onunload createtextrange onload <input\" \"phase:2,status:406,t:lowercase,t:replaceNulls,t:compressWhitespace,t:none,t:urlDecodeUni,t:htmlEntityDecode,t:compressWhiteSpace,t:lowercase,nolog,skip:1\"",
+    "SecAction \"phase:2,status:406,t:lowercase,t:replaceNulls,t:compressWhitespace,nolog,skipAfter:950003\"",
+    "SecRule \"REQUEST_HEADERS|XML:/*|!REQUEST_HEADERS:'/^(Cookie|Referer|X-OS-Prefs)$/'|REQUEST_COOKIES|REQUEST_COOKIES_NAMES\" \"@pm gcc g++\" \"phase:2,status:406,t:lowercase,t:replaceNulls,t:compressWhitespace,t:none,t:urlDecodeUni,t:htmlEntityDecode,t:lowercase,nolog,skip:1\""
+  ],
+  "secRuleIds": [
+    "960022",
+    "960050"
+  ]
+}
+```
+
