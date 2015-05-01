@@ -10,16 +10,15 @@ Modsecurity audit log ingestor configuration for Logstash
 Tested and running in production environments w/ logstash v.1.3.3 and v1.4.1+ (does NOT work with Logstash 1.4.0)
 
 see: http://logstash.net/
-
+see: http://www.slideshare.net/prajalkulkarni/attack-monitoring-using-elasticsearch-logstash-and-kibana
 see: https://github.com/SpiderLabs/ModSecurity/wiki/ModSecurity-2-Data-Formats
-
 see: http://bitsofinfo.wordpress.com/2013/09/19/logstash-for-modsecurity-audit-logs/
 
 license: http://www.apache.org/licenses/LICENSE-2.0
 
 ### Overview
 
-This example configuration file has been used as the basis to process many ModeSecurity audit logs with lots of different variance in regards to which A-K sections are present. At a minimum this is a good starting point to start tackling a complex log format and you can customize it to you needs.
+This example (working) configuration file has been used as the basis to process millions of ModeSecurity audit logs with lots of different variance in regards to which A-K sections are present. At a minimum this is a good starting point to start tackling a complex log format and you can customize it to you needs.
 
 Also note that ModSecurity Audit logs can definately contains some very sensitive data (like user passwords etc). So you might want to also take a look at using Logstash's Cipher filter to secure certain message fields in transit if you are sending these processed logs somewhere else: [http://bitsofinfo.wordpress.com/2014/06/25/encrypting-logstash-data/](http://bitsofinfo.wordpress.com/2014/06/25/encrypting-logstash-data/)
 
