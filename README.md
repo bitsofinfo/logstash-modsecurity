@@ -9,10 +9,10 @@ Modsecurity audit log ingestor configuration for Logstash
 
 Tested and running in production environments w/ logstash v.1.3.3 and v1.4.1+ (does NOT work with Logstash 1.4.0)
 
-see: http://logstash.net/
-see: http://www.slideshare.net/prajalkulkarni/attack-monitoring-using-elasticsearch-logstash-and-kibana
-see: https://github.com/SpiderLabs/ModSecurity/wiki/ModSecurity-2-Data-Formats
-see: http://bitsofinfo.wordpress.com/2013/09/19/logstash-for-modsecurity-audit-logs/
+see: http://logstash.net/  
+see: http://www.slideshare.net/prajalkulkarni/attack-monitoring-using-elasticsearch-logstash-and-kibana  
+see: https://github.com/SpiderLabs/ModSecurity/wiki/ModSecurity-2-Data-Formats  
+see: http://bitsofinfo.wordpress.com/2013/09/19/logstash-for-modsecurity-audit-logs/  
 
 license: http://www.apache.org/licenses/LICENSE-2.0
 
