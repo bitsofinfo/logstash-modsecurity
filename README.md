@@ -3,6 +3,10 @@ logstash-modsecurity
 
 Modsecurity audit log ingestor configuration for Logstash
 
+### Releases
+
+[Version 1.0](https://github.com/bitsofinfo/logstash-modsecurity/releases/tag/1.0): Works with Logstash 1.3.3 and 1.4.1+ 
+
 ### Overview 
 
 Tested and running in production environments w/ logstash v.1.3.3 and v1.4.1+ (does NOT work with Logstash 1.4.0)
