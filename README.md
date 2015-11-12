@@ -7,6 +7,8 @@ Modsecurity audit log ingestor configuration for Logstash
 
 [Version 1.0](https://github.com/bitsofinfo/logstash-modsecurity/releases/tag/1.0): Works with Logstash 1.3.3 and 1.4.1+ (NOT 1.5.x)
 
+MASTER/TRUNK: In-progress, works with Logstash 1.3.3, 1.4.1+ and 1.5.x 
+
 ### Overview 
 
 see: http://logstash.net/  
