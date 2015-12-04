@@ -1,0 +1,47 @@
+###
+# Example configuration for deploy.sh
+# May be placed in /etc/logstash-modsecurity.conf
+###
+
+# MODE defines how the logstash-modsecurity configuration should be deployed (has to be one off "symlink", "file")
+MODE="symlink"
+
+# TARGET defines, where the logstash-modsecurity config should be deployed 
+# For MODE="symlink" TARGET is expected to be a directory (where the symlink to the source files are created)
+# For MODE="file" TARGET is expected to be a file (resulting file of concat operation of all source files)
+# If TARGET does not exists, it will be created.
+TARGET="/etc/logstash/conf.d"
+
+# SOURCEDIR defines, where the logstash-modsecurity config is found, this should point to the directory, where the git clone of logstash-modsecurity is placed.
+SOURCEDIR=""
+
+# MODULES contains the selected rule ids, which should be deployed
+declare -a MODULES=(
+	"0000_header.conf"
+	"1000_input_stdin_example.conf"
+#	"1010_input_file_example.conf"
+	"2000_filter_sections_split.conf"
+	"2010_filter_section_a_parse.conf"
+	"2020_filter_section_b_parse_request_line.conf"
+	"2021_filter_section_b_headers_key-value.conf"
+#	"2029_filter_section_b_example_header_Cookie.conf"
+#	"2029_filter_section_b_example_header_X-Forwarded-For.conf"
+#	"2029_filter_section_b_example_splitt_all_cockies.conf"
+	"2030_filter_section_c_parse.conf"
+#	"2040_filter_section_d_example.conf"
+#	"2050_filter_section_e_example.conf"
+	"2060_filter_section_f_parse_request_line.conf"
+	"2061_filter_section_f_parse_headers.conf"
+	"2062_filter_section_f_headers_key-value.conf"
+#	"2070_filter_section_g_example.conf"
+	"2080_filter_section_h_parse_messages_to_auditLogTrailerMessages.conf"
+	"2081_filter_section_h_convert_to_key-value.conf"
+	"2082_filter_section_h_extract_stopwatch.conf"
+#	"2089_filter_section_h_example_geoip.conf"
+#	"2089_filter_section_h_example_severities.conf"
+#	"2090_filter_section_i_example.conf"
+#	"2100_filter_section_j_example.conf"
+	"2110_filter_section_k_parse_matchedRules.conf"
+	"2500_filter_cleanup.conf"
+	"3000_output_stdout_example.conf"
+)
