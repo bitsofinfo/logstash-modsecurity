@@ -157,6 +157,21 @@ echo "TARGET: ${TARGET}"
 echo "SOURCEDIR: ${SOURCEDIR}"
 echo
 
+# Remove existing symlinks
+if [[ "$MODE" == "symlink" ]]; then
+	for LINK in `find ${TARGET} -type l`; do
+		LINKTARGET=$(readlink ${LINK} | grep ${SOURCEDIR})
+		if [[ -n "${LINKTARGET}" ]]; then
+			echo "remove existing link: ${LINK}"
+			rm ${LINK}
+			if [[ "$?" -ne "0" ]]; then
+				echo "ERROR: Unable to remove existing symlink ${LINK}"
+			fi
+		fi
+	done
+fi
+
+# Create logstash config
 for FILE in "${MODULES[@]}"
 do
 	echo "process ${FILE}"
