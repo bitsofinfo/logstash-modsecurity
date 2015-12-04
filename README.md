@@ -11,7 +11,7 @@ Modsecurity audit log ingestor configuration for Logstash
 
 MASTER/TRUNK: In-progress, full-refactoring into multiple config files breaking apart the processing steps to match the modsecurity audit log sections. Should work with Logstash 1.3.3, 1.4.1+ and 1.5.x+
 
-### Overview 
+### Links
 
 see: http://logstash.net/  
 see: http://www.slideshare.net/prajalkulkarni/attack-monitoring-using-elasticsearch-logstash-and-kibana  
@@ -31,6 +31,19 @@ You should not need to, however IF you go ahead and EDIT the custom ruby filter 
 This config file for whatever reason will not run if you try to add the "-- web" option onto the logstash flat jar. This has been reported to the developers. Recommend you run this without the "-- web" option and just hook up Kibana separately.
 
 Also recommend you start logstash like "java -jar logstash-x.x.x-flatjar.jar agent -v -f /yourConf.conf"  The "-v" will give verbose output and help you debug issues. Also DON'T run in "-v" mode in a prod environment as you will end up outputting a ton of data to your console and/or logstash stdout capture file. (if you have one)
+
+### How to use the modularized configuration
+
+The logstash configuration for Modsecurity is split into several configuration files to allow the user to select exactly those parts, he needs for his use-case, while still maintain compatibility with the upstream configuration, provided in this Github repository.
+
+There are two ways to deploy logstash-modsecurity:
+
+1. Concatenate the needed parts of the logstash-modsecurity configuration to a logstash configuration file.
+2. Create symlinks in the logstash configuration directory to the needed files.
+
+In the second case Logstash has to be pointed to the directory where the configuration including the symlinks is residing. The configuration files (including the symlinks) are then read and concatenated by logstash in lexicographical order.
+
+The deployment process is supported by the provided script `deploy.sh`.
 
 Further note for Centos/Red Hat/Fedora Systems
 ----------------------------------------------
