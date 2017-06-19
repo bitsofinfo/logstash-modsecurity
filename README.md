@@ -5,6 +5,8 @@ Modsecurity audit log ingestor configuration for Logstash
 
 ### Releases
 
+[Version 1.2.1](https://github.com/bitsofinfo/logstash-modsecurity/releases/tag/1.2.1): Various Logstash 5.x fixes 
+
 [Version 1.2](https://github.com/bitsofinfo/logstash-modsecurity/releases/tag/1.2): For the logstash 5.x line
 
 [Version 1.1.1](https://github.com/bitsofinfo/logstash-modsecurity/releases/tag/1.1.1): Fix for logstash versions up to 2.x line
