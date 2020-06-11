@@ -5,6 +5,8 @@ Modsecurity audit log ingestor configuration for Logstash
 
 ### Releases
 
+[Version 1.4.0](https://github.com/bitsofinfo/logstash-modsecurity/releases/tag/1.4.0): see: [PR #48](https://github.com/bitsofinfo/logstash-modsecurity/pull/48), [PR #49](https://github.com/bitsofinfo/logstash-modsecurity/pull/49)
+
 [Version 1.3.0](https://github.com/bitsofinfo/logstash-modsecurity/releases/tag/1.3.0): Fixes issues w/ Logstash 7.x see: [PR #46](https://github.com/bitsofinfo/logstash-modsecurity/pull/46)
 
 [Version 1.2.2](https://github.com/bitsofinfo/logstash-modsecurity/releases/tag/1.2.2): Adds compatibility for ModSecurity 2.9.1+, should still be compatible w/ audit logs produced by <= 2.9.0. See [#34](https://github.com/bitsofinfo/logstash-modsecurity/issues/34) and [PR #42](https://github.com/bitsofinfo/logstash-modsecurity/pull/42)
